@@ -1,0 +1,241 @@
+﻿<!DOCTYPE HTML>
+<html>
+<script src="__ROOT__/about/hm.js"></script><script src="__ROOT__/about/jquery-1.js" language="javascript" type="text/javascript"></script>
+<script src="__ROOT__/about/jquery.js" language="javascript" type="text/javascript"></script>
+<script src="__ROOT__/about/jquery-base.js" language="javascript" type="text/javascript"></script><link href="__ROOT__/about/font_win.css" rel="stylesheet" type="text/css">
+<link href="__ROOT__/about/base.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+    .banner{width:1440px; margin:0 auto; overflow:hidden; position:relative;}
+    .banner ul{display:none; width:100%; overflow:hidden; position:relative;}
+    .banner ul li{width:100%; overflow:hidden; position:absolute; left:0; top:0;}
+    .banner ul li .img_box{width:100%; overflow:hidden; position:relative;}
+    .banner ul li .img_box img{height:100%; position:absolute; left:100%; top:0;width: 100%;}
+    .banner a.pages{display:block; width:36px; height:73px; margin-top:-36px; background:url(/Public/Img/Index/arrow.png) no-repeat; overflow:hidden; position:absolute; top:50%; z-index:99999;}
+    .banner a.prev{background-position:0px 0px; left:38px;}
+    .banner a.prev:hover{background-position:0px -73px;}
+    .banner a.next{background-position:-36px 0px; right:38px;}
+    .banner a.next:hover{background-position:-36px -73px;}
+</style>
+<script src="__ROOT__/about/share.js"></script><link href="__ROOT__/about/share_style2_16.css" rel="stylesheet">
+   {include file="common/header"}
+        <div class="met-banner banner-ny-h" data-height='' style=''>
+            <div class="slick-slide">
+                <img class="cover-image" src="__IMG__/ttp.jpg"
+                alt="农庄简介" width="0px;">
+            </div>
+        </div>
+        <div class="met-column-nav ">
+            <div class="area clearfix" style="margin-top:20px;">
+    <div class="timetown">
+        <div id="wz" class="box">
+            <div class="menu">
+                <div class="option">
+                    <a href="http://www.wtown.com/index.php/Time/index?type=time#menuSub" class="one_on" id="zxtj">最新添加</a>
+                    <a href="http://www.wtown.com/index.php/Time/index?type=zan#menuSub" class="two" id="zdz">最多赞</a>
+                    <a href="http://www.wtown.com/index.php/Time/index?type=view#menuSub" class="three" id="zdll">最多浏览</a>
+                </div>
+                <a href="{:url('index/about3add')}" class="add"><img src="__ROOT__/about/button_add.jpg"></a>
+            </div>
+            <div style="height: 434px;" id="list" class="list">
+                <ul class="moreImg">
+                <?php foreach($arr as $key => $val) { ?>
+                    <li style="left: 0px; top: 0px;">
+                            <div class="img">
+                                <a href="{:url('index/about3show')}">
+                                    <img src="__ROOT__/about/58538ad92bcc0.jpg" width="308">
+                                </a>
+                            </div>
+                            <h2><a href="{:url('index/about3show')}"><?=$val['g_title']?></a></h2>
+                            <p><?=mb_substr($val['g_content'],0,45,'utf8')?></p>
+                            <div class="option">
+                                <span>12578</span>
+                                <a href="javascript:;" class="good" name="1095">61</a>
+                                <a href="http://www.wtown.com/index.php/Time/raiders_travels_view/id/1095#menuSub" class="more" style="padding:0 2px; height:22px; line-height:22px;">查看详情</a>
+                            </div>
+                        </li>
+                <?php }?>
+                          </ul>
+            </div>
+
+        </div>
+        <style type="text/css">
+             a.load_more{display:block; width:100%; height:45px; line-height:45px; color:#fff; font-size:16px; text-align:center; margin-top:20px; background:#977253; overflow:hidden;}
+            a.load_more:hover{text-decoration:none;}
+            </style>
+            <a href="javascript:;" class="load_more" name="3">点击加载更多</a>
+    </div>
+</div>
+        </div>
+        <div class="goto clearfix"><a id="goto" href="javascript:void(0);"><img src="__ROOT__/about/goto_icon.gif"></a></div>
+        <!-- <section class="met-show animsition">
+            <div class="container">
+                <div class="row">
+                    <div class="met-editor lazyload clearfix">
+                    <?php foreach($arr as $key => $val) { ?>
+                        <div><b style="font-size:22px;"><?=$val['g_title']?></b><em style="font-size:12px;margin-left:20px;"><?=date("Y-m-d",$val['g_time'])?></em style="size:2px;"></div>
+                        <div>
+                            <p style="text-indent:2em;letter-spacing:2px;font-size:16px;"><?=$val['g_content']?></p>
+                        </div>
+                    <?php }?>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+             <!--底部-->
+     {include file="common/top"}
+     <!--  <底部>-->
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?ff882986dc575af1f8a7a425dccb106c";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);})();
+</script>
+
+<!-- 加载头部文件 -->
+<script>
+    $(function(){
+        $('#TopContent').load('/Public/Include/topCon.php');
+    });
+</script>
+<!--Footer,End-->
+
+
+
+<script language="javascript" type="text/javascript">
+var margin=10;
+var li=$('#list li');
+var li_W=320;
+var t_img; // 定时器
+var isLoad = true; // 控制变量
+
+function waterfallFlow(){
+    isImgLoad(function(){
+        li=$('#list li');
+        var h=[];
+        //每行LI数量
+        var n=3;
+        var max_H=0;
+
+        for(var i=0;i<li.length;i++){
+
+            li_H=li[i].offsetHeight;
+
+            if(i<n){
+                h[i]=li_H;
+                li.eq(i).css({'left':i*li_W+'px','top':0});
+
+                max_H=Math.max.apply(null,h);
+            }else{
+                min_H=Math.min.apply(null,h);
+
+                minKey=getArrayKey(h,min_H);
+                h[minKey]+=li_H+margin;
+
+                li.eq(i).hide().css({'left':minKey*li_W+'px','top':min_H+margin+'px'}).show();
+
+                max_H=min_H+margin+li_H;
+            }
+        }
+
+        $('#list').css({'height':max_H+'px'});
+    });
+
+}
+//返回数组中某一值的对应项数
+function getArrayKey(s,v){
+    for(k in s){
+        if(s[k]==v) return k;
+    }
+}
+// 判断图片加载的函数
+function isImgLoad(callback){
+    // 注意我的图片类名都是cover，因为我只需要处理cover。其它图片可以不管。
+    // 查找所有封面图，迭代处理
+    $('.cover').each(function(){
+        // 找到为0就将isLoad设为false，并退出each
+        if(this.height === 0){
+            isLoad = false;
+            return false;
+        }
+    });
+    // 为true，没有发现为0的。加载完毕
+    if(isLoad){
+        clearTimeout(t_img); // 清除定时器
+        // 回调函数
+        callback();
+    // 为false，因为找到了没有加载完成的图，将调用定时器递归
+    }else{
+        isLoad = true;
+        t_img = setTimeout(function(){
+            isImgLoad(callback); // 递归扫描
+        },100); // 我这里设置的是500毫秒就扫描一次，可以自己调整
+    }
+}
+//加载完成后运行
+window.onload=function(){
+    waterfallFlow();
+}
+</script>
+
+<script>
+    $(function(){
+        // 最新添加、最多赞、最多浏览分类
+        var type = "time";
+        if(type == 'time'){
+            $('#zxtj').removeClass('one');
+            $('#zxtj').addClass('one_on');
+        }else if(type == 'zan'){
+            $('#zdz').removeClass('two');
+            $('#zdz').addClass('two_on');
+        }else if(type == 'view'){
+            $('#zdll').removeClass('three');
+            $('#zdll').addClass('three_on');
+        }
+
+
+        // 点赞
+        $('.good').click(function(){
+            var id = $(this).attr('name');
+            var orders = parseInt($(this).html());
+            $.get('/index.php/Time/good', {'id':id}, function(data){
+                // alert(data);
+                if(data == '赞过'){
+                    alert('对不起，您已经赞过这篇游记！');
+                }else if(data == '正确'){
+                    $(".good[name='"+id+"']").html(orders+1);
+                }
+            });
+        });
+
+
+        // 点击加载更多
+        $('.load_more').click(function(){
+            var first = $(this).attr('name');
+            // alert(first);
+            $.get('/index.php/Time/load_more', {'first':first, 'type':type}, function(json){
+                // alert(json);
+                if(json.success){
+                    var morelist = '';
+                    var allnodes = json.message;
+                    if(allnodes.length == 0){
+                        $('.load_more').html('已经全部加载！');
+                        $('.load_more').unbind('click');
+                    }else{
+                        for (var i=0; i<allnodes.length; i++){
+                            morelist += '<li><div class="img"><a href="/index.php/Time/raiders_travels_view/id/'+allnodes[i].id+'"><img src="/Upload/File/'+allnodes[i].attachpath+'/'+allnodes[i].attachment+'" width="308" class="cover" /></a></div><h2><a href="/index.php/Time/raiders_travels_view/id/'+allnodes[i].id+'">'+allnodes[i].title+'</a></h2><p>'+allnodes[i].Intro+'</p><div class="option"><span>'+allnodes[i].hits+'</span><a href="javascript:;" class="good" name="'+allnodes[i].id+'">'+allnodes[i].orders+'</a><a href="/index.php/Time/raiders_travels_view/id/'+allnodes[i].id+'" class="more">+MORE</a></div></li>';
+                        };
+                        $('.moreImg').append(morelist);
+                        $('.load_more').attr('name', parseInt(first)+3);
+                        waterfallFlow();
+                    }
+                }
+            }, "json");
+        });
+    });
+</script>
+</html>

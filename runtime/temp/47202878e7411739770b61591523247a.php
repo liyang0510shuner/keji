@@ -1,0 +1,368 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:77:"H:\phpStudy\WWW\month12\tp5\public/../application/index\view\index\cases.html";i:1526460651;s:66:"H:\phpStudy\WWW\month12\tp5\application\index\view\common\tou.html";i:1526455482;s:66:"H:\phpStudy\WWW\month12\tp5\application\index\view\common\top.html";i:1525943202;}*/ ?>
+﻿<!DOCTYPE html>
+<html lang="en">
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?0791a2f9676aee83f8e9a84788e1bb74";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<head>
+    <!--<meta http-equiv=”X-UA-Compatible” content=”IE=edge,chrome=1″ />-->
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"/>-->
+    <meta charset="UTF-8">
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache,must-revalidate">
+    <META HTTP-EQUIV="expires" CONTENT="0">
+    <meta name="Description" content="古北水镇预订网是古北水镇景区旗下官方预订网站，提供景区内各类套餐、自由行产品等预订服务，让您省钱更省心。">
+    <title>
+        票务预订 - 古北水镇官方预订网站
+    </title>
+    <link href="/Public/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/static/css/base.css" rel="stylesheet">
+
+    <link href="/static/css/slide.css" rel="stylesheet">
+    <style>
+        .contentBox {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #373b3e;
+            height: 50px;
+            line-height: 50px;
+        }
+
+        .wrap {
+            min-width: 1200px;
+            background: #f2f2f2;
+            width: 100%;
+            padding: 15px 0;
+        }
+
+        .box ul {
+            max-width: 1061px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .box ul li {
+            margin-bottom: 15px;
+            *float: left;
+        }
+
+        .ticket-left {
+            width: 374px;
+            height: 240px;
+            float: left;
+            border-radius: 15px;
+        }
+
+        .ticket-left img {
+            overflow: hidden;
+        }
+
+        .ticket-right {
+            width: 626px;
+            height: 180px;
+            float: left;
+            background-color: #373b3e;
+            border-left: 1px dashed #ffffff;
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .ticket-right p {
+            color: #eeeeee;
+        }
+
+        .ticket-right .btn {
+            display: inline-block;
+            border: 1px solid #a1a1a1;
+            border-radius: 5px;
+            padding: 3px 6px;
+            float: right;
+        }
+
+        .ticket-right a{
+            color: #eeeeee;
+        }
+
+        .fs24 {
+            font-size: 24px;
+        }
+
+        .fs20 {
+            font-size: 20px;
+        }
+
+        .box ul li .txt{
+            line-height: 24px;
+            margin: 20px 0;
+        }
+    </style>
+
+
+           <!--tou部-->
+     <head>
+    <!--<meta http-equiv=”X-UA-Compatible” content=”IE=edge,chrome=1″ />-->
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"/>-->
+    <meta charset="UTF-8">
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache,must-revalidate">
+    <META HTTP-EQUIV="expires" CONTENT="0">
+    <meta name="Description" content="古北水镇预订网是古北水镇景区旗下官方预订网站，提供景区内各类套餐、自由行产品等预订服务，让您省钱更省心。">
+    <title>
+        支付信息 - 古北水镇官方预订网站
+    </title>
+    <link href="/Public/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/static/css/base.css" rel="stylesheet">
+
+    <link href="/static/css/showOrder.css" rel="stylesheet">
+
+<meta name="random" content="03159c19cd020f59e317d7fe222641e6_bd8cd5e3d032b2f0b2dfb0a123f2c8bd" /></head>
+<body>
+<div class="top clearfix">
+    <div class="top-left clearfix">
+        <ul class="topmenu-left">
+            <li>欢迎来到古北水镇</li>
+            <li><a href="<?php echo url('index/index'); ?>" target="_blank">古北水镇官网</a></li>
+            <li>
+                <span class="phone">
+                    <img src="/Public/Reservation/images/phone.png">
+                </span>
+                <span class="phone-line">&nbsp;|&nbsp;</span>
+                <!-- <span class="phone-size">521-520-1314 &nbsp;</span> -->
+            </li>
+            <li>
+                <iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=99" width="160" height="36" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+            </li>
+        </ul>
+        <ul class="topmenu-right">
+            <li>
+                <a href="/index.php/Reservation/Account/baseInfo.html">15810037426</a>
+                    <span style="float: left">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                    <a href="javascript:if(confirm('确定要退出吗？'))quit()">退出</a>
+                                </li>
+            <li><a href="/index.php/Reservation/Order/orderManage.html">我的订单</a></li>
+            <li><a href="/index.php/Reservation/Order/orderManage.html?ostatus=0">购物车</a></li>
+        </ul>
+    </div>
+</div>
+     <!--  <tou部>-->
+
+<!-- 背景透明导航栏-->
+
+
+<!-- 背景为黑色导航栏-->
+
+
+
+
+    <div id="slideBox" class="slideBox">
+        <div class="filter-overlay"></div>
+        <div class="bd">
+            <ul>
+                <li><img src="/Upload/Reservation/058d5f89bbd5ae.jpg"></li>
+            </ul>
+        </div>
+        <a class="prev" href="javascript:void(0)"></a>
+        <a class="next" href="javascript:void(0)"></a>
+
+        <div class="contentBox">
+        </div>
+    </div>
+    <div class="wrap">
+        <div class="box">
+            <ul class="clearfix">
+                        <?php foreach($arr as $key => $val) { ?>
+                <li class="clearfix" style="margin-top:15px;">
+                        <div class="ticket-left">
+                            <img src="/uploads/<?=$val['scenic_photo']?>" style="width: 100%;height: 100%;">
+                        </div>
+                        <div class="ticket-right">
+                            <p class="fs24"><a href="<?php echo url('ticket/index'); ?>?t_id=<?=$val['t_id']?>"><?=$val['t_name']?></a></p>
+                            <p class="txt">
+                                开放时间：<?=$val['scenic_name']?>：<?=$val['open_time']?> <br>
+                                费用包含：<?=$val['t_comment']?><br>
+                                温馨提示：景区门票当日一次进入有效，刷码注销。（住宿客人勿拍）                            </p>
+                            <p><span class="fs24">￥<?=$val['t_price']?></span><span class="fs20 btn"><a href="<?php echo url('ticket/index'); ?>?t_id=<?=$val['t_id']?>">立即购买</a></span></p>
+                        </div>
+                    </li>
+                        <?php }?>
+            </ul>
+        </div>
+    </div>
+
+<div class="bottom-footer" id="bottom_footer">
+
+
+        <hr>
+        <div class="footer-home">
+                <!--底部-->
+     <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		 <footer>
+            <div class="container text-center">
+                <p>
+                    Gubeishuizhen &copy; 2018-2022 最牛逼有限公司 版权所有
+                </p>
+                <div class="powered_by_metinfo">
+                    ICP备XXXXXXXX号
+                </div>
+            </div>
+        </footer>
+          <button type="button" class="btn btn-icon btn-primary btn-squared met-scroll-top hide">
+            <i class="icon wb-chevron-up" aria-hidden="true">
+            </i>
+        </button>
+        <script src="/static/js/email-decode.min.js">
+        </script>
+        <script src="/static/js/index.js">
+        </script>
+	</body>
+</html>
+
+     <!--  <底部>-->
+
+        </div>
+    </div>
+</div>
+
+
+
+<!--右侧广告图片-->
+<div class="adBox">
+        <a href="http://www.wtown.com.cn/index.php/Reservation/Package/index.html?combo_type=8" target="_blank" title="长城踏青季"><img src="/Upload/Reservation/05acea6f32a649.jpg" alt="" class="adimg"></a>
+    </div><div class="online-div">
+    <!--客服-->
+    <div class="service">
+        <a href="https://chat32.live800.com/live800/chatClient/chatbox.jsp?companyID=747330&configID=104795&jid=8140345408&s=1"
+           target="_blank">
+            <img src="/Public/Reservation/images/在线客服.png">
+        </a>
+    </div>
+    <div class="qrcode">
+        <img src="/Public/Reservation/images/qrcode.png">
+    </div>
+    <div style="display: none" id="weixin">
+        <img src="/Public/Reservation/images/weixinqrcode.png">
+    </div>
+    <div class="myorder">
+        <a href="/index.php/Reservation/Order/orderManage.html?ostatus=0" title="购物车">
+            <img src="/Public/Reservation/images/cart.png">
+        </a>
+    </div>
+</div>
+
+<script src="/static/js/jquery-1.8.0.js"></script>
+
+<!-- Live800默认功能代码: 开始-->
+<script language="javascript"
+        src="https://chat32.live800.com/live800/chatClient/monitor.js?jid=8140345408&companyID=747330&configID=104794&codeType=custom&ss=1"></script>
+<!-- Live800默认功能代码: 结束-->
+
+<!-- Live800默认数据分析代码: 开始-->
+<div style='display:none;'><a href='http://www.live800.com'>客服软件</a></div>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-86803662-8']);
+    _gaq.push(['_trackPageview']);
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<div style='display:none;'><a href='http://en.live800.com'>live chat</a></div>
+<!-- Live800默认数据分析代码: 结束-->
+
+<script src="/static/js/common.js"></script>
+<script src="/static/js/scrollUp.min.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?2308ee10dc67607f33445c1c0a899681";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<!--轮播js-->
+<!--<script type="text/javascript">-->
+<!--jQuery(".slideBox").slide({mainCell: ".bd ul", effect: "leftLoop", autoPlay: true});//左循环-->
+<!--</script>-->
+<script>
+    //  回顶部
+    jQuery.scrollUp({animation: 'fade', scrollDistance: 50, scrollText: '<span></span>', scrollTitle: '回顶部'});
+    $(".footer-text li:first-child").css({"font-size": "16px", "margin-bottom": "6px"});
+    //将页面内所有指定id的图片按比例缩放
+    function RsizeAllImageByClass(id, W, H) {
+        var imgs = document.getElementsByTagName("img");
+        for (var i = 0; i < imgs.length; i++) {
+            if ($(imgs[i]).attr('class') == id) {
+                ResizeImage(imgs[i], W, H);
+            }
+        }
+    }
+    //将图片的大小按比例缩放,适合显示在宽W和高H的区域内
+    function ResizeImage(imageDest, W, H) {
+        var image = new Image();
+        image.src = imageDest.src;
+        if (image.width > 0 && image.height > 0) {
+            if (image.width / image.height >= W / H) {
+                if (image.width > W) {
+                    imageDest.width = W;
+                    imageDest.height = (image.height * W) / image.width;
+                }
+                else {
+                    imageDest.width = image.width;
+                    imageDest.height = image.height;
+                }
+            }
+            else {
+                if (image.height > H) {
+                    imageDest.height = H;
+                    imageDest.width = (image.width * H) / image.height;
+                }
+                else {
+                    imageDest.width = image.width;
+                    imageDest.height = image.height;
+                }
+            }
+        }
+    }
+    $(document).ready(function () {
+        // 显示微信二维码
+        $(".qrcode").hover(function () {
+            $("#weixin").css("display", "block");
+        }, function () {
+            $("#weixin").css("display", "none");
+        });
+
+//        $("#nav ul li").click(function () {
+//            $(this).addClass('current').siblings().removeClass('current');
+//        });
+        // 浏览器可视高度
+        var screenHeight = document.documentElement.clientHeight;
+        //底部高度
+        var foot_height = document.getElementById("bottom_footer").offsetHeight;
+        var height = screenHeight - foot_height;
+        $(".wrap").css("min-height", height - 120);
+
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,397 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?0791a2f9676aee83f8e9a84788e1bb74";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<head>
+    <!--<meta http-equiv=”X-UA-Compatible” content=”IE=edge,chrome=1″ />-->
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"/>-->
+    <meta charset="UTF-8">
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache,must-revalidate">
+    <META HTTP-EQUIV="expires" CONTENT="0">
+    <meta name="Description" content="古北水镇预订网是古北水镇景区旗下官方预订网站，提供景区内各类套餐、自由行产品等预订服务，让您省钱更省心。">
+    <title>
+        古北水镇预订网
+    </title>
+    <link href="/Public/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="__CSS__/base.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="__CSS__/confirmOrder.css">
+    <link rel="stylesheet" href="__CSS__/loading.css">
+
+           <!--tou部-->
+     {include file="common/tou"}
+     <!--  <tou部>-->
+
+   
+    <div class="wrap">
+        <div class="content">
+            <!--<form action="/index.php/Reservation/Order/addOrder.html" method="post">-->
+            <div class="title">订单信息</div>
+            <input type="hidden" name="scenic_code" value="GBHOTEL">
+            <input type="hidden" name="product_type" value="room">
+            <input type="hidden" name="product_code" value="GBJ2">
+            <input type="hidden" name="product_name" value="古北之光家庭房A">
+            <input type="hidden" name="spot_code" value="GB">
+
+            <div class="box">
+                <ul>
+                    <li><span>房型名称：</span><a>古北之光家庭房A</a></li>
+                    <li>
+                        <span>入住时间：</span><input type="text" name="startdate" value="2018-05-15" id="startdate" readonly>
+                        <label>离店时间：</label><input type="text" name="enddate" value="2018-05-16" id="enddate" readonly>
+                        <a href="javascript:;" class="red" onclick="opDiv();">修改时间</a>
+
+                        <div class="date_change" id="dateDiv">
+                            <div class="date_change_tit"><a class="cha" onclick="cloDiv();" href="javascript:;"></a>修改入住日期
+                            </div>
+                            <div class="date_change_con"> 入住日期：
+                                <input type="text" name="enterDateStr" id="enterDate" class="text sr" value="2018-05-15" onclick="WdatePicker({readOnly:true,minDate:'%y-%M-%d',maxDate:'%y-%M-{%d+90}',onpicked:function(){set_enddate('enterDate','leaveDate');}})"/>
+                                退房日期：
+                                <input type="text" name="leaveDateStr" id="leaveDate" class="text sr" value="2018-05-16" onclick="WdatePicker({readOnly:true,minDate:'#F{ $dp.$D(\'enterDate\',{d:1})}',maxDate:'%y-%M-{%d+91}'})"/>
+                                <input type="button" value="确定" class="btn" onclick="confirmOrder();">
+                                <br><font style="padding-left:220px">(如需预订三个月以上，请联系客服预订)</font>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span>房间数量：</span>
+
+                        <div class="spinner">
+                            <a href="javascript:;" onclick="reduce_num()">－</a>
+                            <input type="text" name="num" value="1" readonly>
+                            <a href="javascript:;" onclick="add_num()">＋</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span>总价：</span>
+                        <label id="price">1790元</label>
+
+                        <div class="booking-notice">
+                            您选的时间段库存不足，请修改入离日期或返回重新下单。
+                        </div>
+                    </li>
+                    <li><span>入住人姓名：</span><input type="text" name="stayname" id="stayname"
+                                                  onkeyup="value=value.replace(/[^\a-zA-Z\u4E00-\u9FA5]/g,'')"><label
+                            class="red">*所填姓名必须与入住时所持证件姓名完全一致</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="title">购买须知</div>
+            <div class="info">
+                <p>1、网上预订需支付全额房费，如需取消订单，请至少提前72个小时；若在72小时内取消，需收取订单总额的20%作为违约金；当天取消，需收取订单总额的100%作为违约金；</p>
+                <p>2、请携带好所有入住客人有效身份证件至游客中心大前台办理入住；</p>
+                <p>3、景区内禁止携带宠物、各类易燃易爆物和任何有害公众安全之危险物品（如烟花等）</p>
+            </div>
+            <div class="box">
+                <ul>
+                    <li><span class="ww">预订人姓名：</span><input type="text" name="guestname" id="guestname" value=""
+                                                             onkeyup="value=value.replace(/[^\a-zA-Z\u4E00-\u9FA5]/g,'')"><label
+                            class="red">*</label></li>
+                    <li><span class="ww">预订人联系方式：</span><input type="text" name="mobile" id="mobile" value="15810037426"><label
+                            class="red">*</label></li>
+                    <li style="height: 100px;"><span class="ww">需求：</span><textarea name="remark" id="remark" placeholder="（我们会尽量转达您的需求，但不保证一定实现）"></textarea></li>
+                </ul>
+                <div class="warmtips">
+                    <span>温馨提示：</span>
+                    预订前如有疑问，建议您在线咨询或拨打咨询热线010-81009999；<br>
+                    所有客人保证入住时间为当日15:00之后，退房时间为次日12:00之前，如迟退房，需跟酒店前台沟通，并另行收取相应房费。
+                </div>
+
+                <div class="subBtn buyBtn">
+                    <input type="button" value="提交订单" class="redBtn" id="sub">
+                </div>
+            </div>
+            <!--<input type="hidden" name="random" value="7004e11aa8983fe201b6241e021b620c_d740870e28319b872ee99069b79d1502" /></form>-->
+        </div>
+    </div>
+
+    <div class="createMask" style="display: none;"></div>
+    <div class="alertBox" style="display: none;">
+        <p>系统处理中，请稍候...</p>
+
+        <div class="loading">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <form action="{:url('ticket/din')}" method="post" id="errorform">
+        <input type="hidden" name="info">
+    <input type="hidden" name="random" value="7004e11aa8983fe201b6241e021b620c_d740870e28319b872ee99069b79d1502" /></form>
+
+<div class="bottom-footer" id="bottom_footer">
+    <div class="footer">
+                   <!--底部-->
+     {include file="common/top"}
+     <!--  <底部>-->
+</div>
+
+
+
+<!--右侧广告图片-->
+<div class="online-div">
+    <!--客服-->
+    <div class="service">
+        <a href="https://chat32.live800.com/live800/chatClient/chatbox.jsp?companyID=747330&configID=104795&jid=8140345408&s=1"
+           target="_blank">
+            <img src="/Public/Reservation/images/在线客服.png">
+        </a>
+    </div>
+    <div class="qrcode">
+        <img src="/Public/Reservation/images/qrcode.png">
+    </div>
+    <div style="display: none" id="weixin">
+        <img src="/Public/Reservation/images/weixinqrcode.png">
+    </div>
+    <div class="myorder">
+        <a href="/index.php/Reservation/Order/orderManage.html?ostatus=0" title="购物车">
+            <img src="/Public/Reservation/images/cart.png">
+        </a>
+    </div>
+</div>
+
+<script src="__JS__/jquery-1.8.0.js"></script>
+
+<!-- Live800默认功能代码: 开始-->
+<script language="javascript"
+        src="https://chat32.live800.com/live800/chatClient/monitor.js?jid=8140345408&companyID=747330&configID=104794&codeType=custom&ss=1"></script>
+<!-- Live800默认功能代码: 结束-->
+
+<!-- Live800默认数据分析代码: 开始-->
+<div style='display:none;'><a href='http://www.live800.com'>客服软件</a></div>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-86803662-8']);
+    _gaq.push(['_trackPageview']);
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<div style='display:none;'><a href='http://en.live800.com'>live chat</a></div>
+<!-- Live800默认数据分析代码: 结束-->
+
+<script src="__JS__/common.js"></script>
+<script src="__JS__/jquery.scrollUp.min.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?2308ee10dc67607f33445c1c0a899681";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<!--轮播js-->
+<!--<script type="text/javascript">-->
+<!--jQuery(".slideBox").slide({mainCell: ".bd ul", effect: "leftLoop", autoPlay: true});//左循环-->
+<!--</script>-->
+<script>
+    //  回顶部
+    jQuery.scrollUp({animation: 'fade', scrollDistance: 50, scrollText: '<span></span>', scrollTitle: '回顶部'});
+    $(".footer-text li:first-child").css({"font-size": "16px", "margin-bottom": "6px"});
+    //将页面内所有指定id的图片按比例缩放
+    function RsizeAllImageByClass(id, W, H) {
+        var imgs = document.getElementsByTagName("img");
+        for (var i = 0; i < imgs.length; i++) {
+            if ($(imgs[i]).attr('class') == id) {
+                ResizeImage(imgs[i], W, H);
+            }
+        }
+    }
+    //将图片的大小按比例缩放,适合显示在宽W和高H的区域内
+    function ResizeImage(imageDest, W, H) {
+        var image = new Image();
+        image.src = imageDest.src;
+        if (image.width > 0 && image.height > 0) {
+            if (image.width / image.height >= W / H) {
+                if (image.width > W) {
+                    imageDest.width = W;
+                    imageDest.height = (image.height * W) / image.width;
+                }
+                else {
+                    imageDest.width = image.width;
+                    imageDest.height = image.height;
+                }
+            }
+            else {
+                if (image.height > H) {
+                    imageDest.height = H;
+                    imageDest.width = (image.width * H) / image.height;
+                }
+                else {
+                    imageDest.width = image.width;
+                    imageDest.height = image.height;
+                }
+            }
+        }
+    }
+    $(document).ready(function () {
+        // 显示微信二维码
+        $(".qrcode").hover(function () {
+            $("#weixin").css("display", "block");
+        }, function () {
+            $("#weixin").css("display", "none");
+        });
+
+//        $("#nav ul li").click(function () {
+//            $(this).addClass('current').siblings().removeClass('current');
+//        });
+        // 浏览器可视高度
+        var screenHeight = document.documentElement.clientHeight;
+        //底部高度
+        var foot_height = document.getElementById("bottom_footer").offsetHeight;
+        var height = screenHeight - foot_height;
+        $(".wrap").css("min-height", height - 120);
+
+    });
+</script>
+
+    <script src="__JS__/WdatePicker.js"></script>
+    <script>
+        var available = 1;
+        if (available > 0) {
+            $(".booking-notice").hide();
+            $(".buyBtn").show();
+        } else {
+            $(".booking-notice").show();
+            $(".buyBtn").hide();
+        }
+
+        function opDiv() {
+            $("#dateDiv").show();
+        }
+
+        function cloDiv() {
+            $("#dateDiv").hide();
+        }
+
+        function reduce_num() {
+            var temp_num = Number($("input[name='num']").val()) - 1;
+            if (temp_num < 1) {
+                alert("数量至少为1");
+            }
+            else {
+                $.post("/index.php/Reservation/Room/getPrice.html",
+                        {
+                            scenic_code: 'GBHOTEL',
+                            rt_code: 'GBJ2',
+                            startdate: $("#startdate").val(),
+                            enddate: $("#enddate").val(),
+                            num: temp_num
+                        }, function (data) {
+                            $("input[name='num']").val(temp_num);
+                            $("#price").text(data.price + "元");
+                            if (data.available == 1) {
+                                $(".booking-notice").hide();
+                                $(".buyBtn").show();
+                            } else {
+                                alert('您好，预订数量已不足，请选择其他日期或房型');
+                                $(".booking-notice").show();
+                                $(".buyBtn").hide();
+                            }
+                        });
+            }
+        }
+
+        function add_num() {
+            var temp_num = Number($("input[name='num']").val()) + 1;
+            $.post("/index.php/Reservation/Room/getPrice.html",
+                    {
+                        scenic_code: 'GBHOTEL',
+                        rt_code: 'GBJ2',
+                        startdate: $("#startdate").val(),
+                        enddate: $("#enddate").val(),
+                        num: temp_num
+                    }, function (data) {
+                        if (data.available == 1) {
+                            $("input[name='num']").val(temp_num);
+                            $("#price").text(data.price + "元");
+                        } else {
+                            alert('您好，已达到该房型最大可预订数量，若需加订请联系客服处理');
+                        }
+                    });
+        }
+
+        function confirmOrder() {
+            var inDate = $("#enterDate").val();
+            var outDate = $("#leaveDate").val();
+            var rt_code = 'GBJ2';
+            var hotel_code = 'GB';
+            var scenic_code = 'GBHOTEL';
+            var num = $("input[name='num']").val();
+            location.href = "/index.php/Reservation/Order/confirmRoom.html?rt_code=" + rt_code + "&hotel_code=" + hotel_code + '&scenic_code=' + scenic_code + '&startdate=' + inDate + '&enddate=' + outDate + '&num=' + num;
+        }
+
+
+        $("#sub").click(function () {
+            var startdate = $("#startdate").val();
+            var enddate = $("#enddate").val();
+            var stayname = $("#stayname").val();
+            var guestname = $("#guestname").val();
+            if (!startdate) {
+                alert("入住时间不能为空！");
+                return false;
+            }
+            if (!enddate) {
+                alert("离店时间不能为空！");
+                return false;
+            }
+            if (!stayname) {
+                alert("姓名不能为空！");
+                $("#stayname").focus();
+                return false;
+            }
+            if (!guestname) {
+                alert("姓名不能为空！");
+                $("#guestname").focus();
+                return false;
+            }
+            if (!check_mobile()) {
+                return false;
+            }
+            $(".createMask").fadeIn(100);
+            $(".alertBox").slideDown(200);
+            $.post("{:url('ticket/din')}",
+                    {
+                        product_type: $("input[name='product_type']").val(),
+                        product_code: $("input[name='product_code']").val(),
+                        product_name: $("input[name='product_name']").val(),
+                        num: $("input[name='num']").val(),
+                        scenic_code: $("input[name='scenic_code']").val(),
+                        guestname: $("input[name='guestname']").val(),
+                        mobile: $("input[name='mobile']").val(),
+                        startdate: $("input[name='startdate']").val(),
+                        enddate: $("input[name='enddate']").val(),
+                        spot_code: $("input[name='spot_code']").val(),
+                        remark: $("#remark").val(),
+                        stayname: $("input[name='stayname']").val()
+                    },
+                    function (data) {
+                        if (data.status == 1) {
+                            location.href = "{:url('ticket/din')}?orderid=" + data.orderid;
+                        } else {
+                            $("input[name='info']").val(data);
+                            $("#errorform").submit();
+                        }
+                    });
+        })
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+
+
+
+       {include file="common/header"}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="Custom Theme">
+        <meta http-equiv="refresh" content="3;url={:url('index/about3')}" />
+
+        <div class="met-banner banner-ny-h" data-height='' style=''>
+            <div class="slick-slide">
+                <img class="cover-image" src="__IMGS__/3.jpg" height="700" alt="农庄简介">
+            </div>
+        </div>
+        <div >
+        <div class="container">
+        <center>
+            <!-- BEGIN MAIN CONTENT -->
+            <section class="error-wrapper">
+                <h3>正在审核，请稍等</h3>
+                <p class="page-404">
+                    <span>页面自动</span>
+                    <a href="http://blog.csdn.net/zhihua_w">跳转</a>
+                    <span>等待时间：</span>
+                    <span class="second">3</span>
+                </p>
+            </section>
+            <!-- END MAIN CONTENT -->
+        </center></div>
+
+            <!--底部-->
+     {include file="common/top"}
+     <!--  <底部>-->
+
+
+</html>
+<script src="__ROOT__/jquery.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var wait = $(".second").html();
+            timeOut();
+            /**
+             * 实现倒计时
+             */
+            function timeOut() {
+                if(wait != 0) {
+                    setTimeout(function() {
+                        $('.second').text(--wait);
+                        timeOut();
+                    }, 1000);
+                }
+            }
+        });
+    </script>

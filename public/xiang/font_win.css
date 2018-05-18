@@ -1,0 +1,16 @@
+/*
+ * file    : font_win.css
+ * author  : chao.Radish@gmail.com
+ */
+
+@charset "UTF-8";
+/*重置字体*/
+body,
+div,
+dl,dt,dd,
+ul,ol,li,
+h1,h2,h3,h4,h5,h6,
+form,lable,input,select,textarea,
+p,
+table,tr,th,td,
+a,i,span,b{font-size:12px; font-family:'Microsoft YaHei','微软雅黑';}

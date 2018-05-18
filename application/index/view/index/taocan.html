@@ -1,0 +1,541 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?0791a2f9676aee83f8e9a84788e1bb74";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<head>
+    <!--<meta http-equiv=”X-UA-Compatible” content=”IE=edge,chrome=1″ />-->
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"/>-->
+    <meta charset="UTF-8">
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache,must-revalidate">
+    <META HTTP-EQUIV="expires" CONTENT="0">
+    <meta name="Description" content="古北水镇预订网是古北水镇景区旗下官方预订网站，提供景区内各类套餐、自由行产品等预订服务，让您省钱更省心。">
+    <title>
+        酒店预订 - 古北水镇官方预订网站
+    </title>
+    <link href="/Public/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="__CSS__/base.css" rel="stylesheet">
+
+    <link href="__CSS__/room.css" rel="stylesheet">
+    <link href="__CSS__/slide.css" rel="stylesheet">
+
+           <!--tou部-->
+     {include file="common/tou"}
+     <!--  <tou部>-->
+
+
+
+    <div class="content">
+        <div id="slideBox" class="slideBox">
+            <div class="filter-overlay"></div>
+            <div class="bd">
+                <ul>
+                    <li><img src="/Upload/Reservation/0581aa25f5e363.jpg"></li>
+                </ul>
+            </div>
+            <a class="prev" href="javascript:void(0)"></a>
+            <a class="next" href="javascript:void(0)"></a>
+        </div>
+        <form action="/index.php/Reservation/Room/index.html" id="roomform" method="post">
+            <input type="hidden" name="hidesort" id="hidesort" value="">
+            <input type="hidden" name="hideorder" id="hideorder" value="">
+
+            <div class="head-nav" id="head-nav">
+                <div class="head-content">
+                    <div class="div-left">
+                        <input type="hidden" id="type" name="type" value="">
+                        <label><input type="radio" name="hoteltype" value="b" onclick="changeSelect('type','b')"/><span>精品酒店</span></label>
+                        <label><input type="radio" name="hoteltype" value="t" onclick="changeSelect('type','t')"/><span>主题酒店</span></label>
+                        <label><input type="radio" name="hoteltype" value="s" onclick="changeSelect('type','s')"/><span>特色民宿</span></label>
+                        <label><input type="radio" name="hoteltype" value="any"
+                                      onclick="changeSelect('type','')"/><span>全部</span></label>
+                    </div>
+                    <div class="div-right">
+                        <ul class="order">
+                            <li onclick="order_function('sort')" onselectstart="return false;">
+                                <input type="hidden" id="sortorder" name="sortorder" value="desc">
+                                综合
+                                <img src='/Public/Reservation/images/desc1.png' id="sortdesc">
+                                <img src='/Public/Reservation/images/asc1.png' id="sortasc" style="display: none">
+                                <img src='/Public/Reservation/images/none1.png' id="sortnone" style="display: none">
+                            </li>
+                            <li onclick="order_function('min_price')" onselectstart="return false;">
+                                <input type="hidden" id="priceorder" name="priceorder" value="">
+                                价格
+                                <img src='/Public/Reservation/images/none1.png' id="pricenone">
+                                <img src='/Public/Reservation/images/asc1.png' id="priceasc" style="display: none">
+                                <img src='/Public/Reservation/images/desc1.png' id="pricedesc" style="display: none">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="filter">
+                <ul class="select">
+                    <li class="select-list">
+                        <input type="hidden" id="price" name="price" value="">
+                        <dl>
+                            <dt>价格：</dt>
+                            <dd id="price-"><a href="javascript:" onclick="changeSelect('price','')">不限</a></dd>
+                            <!--<dd id="price-0-500"><a href="javascript:" onclick="changeSelect('price','0-500')">500以下</a></dd>-->
+                            <dd id="price-501-1000"><a href="javascript:" onclick="changeSelect('price','501-1000')">501-1000</a>
+                            </dd>
+                            <dd id="price-1001-2000"><a href="javascript:" onclick="changeSelect('price','1001-2000')">1001-2000</a>
+                            </dd>
+                            <dd id="price-2001-3000"><a href="javascript:" onclick="changeSelect('price','2001-3000')">2001-3000</a>
+                            </dd>
+                            <dd id="price-3001-9999999"><a href="javascript:"
+                                                           onclick="changeSelect('price','3001-9999999')">3000以上</a>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="select-list">
+                        <input type="hidden" id="room_type" name="room_type" value="">
+                        <dl>
+                            <dt>房型：</dt>
+                            <dd id="room_type_"><a href="javascript:" onclick="changeSelect('room_type','')">不限</a></dd>
+                            <dd id="room_type_1"><a href="javascript:;"
+                                                               onclick="changeSelect('room_type','1')">大床房</a>
+                                </dd><dd id="room_type_3"><a href="javascript:;"
+                                                               onclick="changeSelect('room_type','3')">标间</a>
+                                </dd><dd id="room_type_5"><a href="javascript:;"
+                                                               onclick="changeSelect('room_type','5')">家庭房</a>
+                                </dd><dd id="room_type_6"><a href="javascript:;"
+                                                               onclick="changeSelect('room_type','6')">套房</a>
+                                </dd>                        </dl>
+                    </li>
+                    <li class="select-list">
+                        <input type="hidden" id="place" name="place" value="">
+                        <dl id="place_dl">
+                            <dt>位置：</dt>
+                            <dd id="place_"><a href="javascript:" onclick="changeSelect('place','')">不限</a></dd>
+                            <dd id="place_inside"><a href="javascript:" onclick="changeSelect('place','inside')">景区内</a>
+                            </dd>
+                            <dd id="place_outside"><a href="javascript:"
+                                                      onclick="changeSelect('place','outside')">景区外</a></dd>
+                        </dl>
+                    </li>
+                    <!--<li class="select-list">-->
+                    <!--<input type="hidden" id="envir" name="envir" value="">-->
+                    <!--<dl>-->
+                    <!--<dt>环境：</dt>-->
+                    <!--<dd id="envir_"><a href="javascript:" onclick="changeSelect('envir','')">不限</a></dd>-->
+                    <!--<dd id="envir_1"><a href="javascript:" onclick="changeSelect('envir','1')">不临水</a></dd>-->
+                    <!--<dd id="envir_2"><a href="javascript:" onclick="changeSelect('envir','2')">临水</a></dd>-->
+                    <!--</dl>-->
+                    <!--</li>-->
+                    <!--<li class="select-result">-->
+                    <!--</li>-->
+                </ul>
+            </div>
+
+            <div class="search-div">
+                <ul class="search-content">
+                    <li class="date">
+                        <span>入住日期</span>
+                        <input type="text" name="startdate" value="2018-05-15" id="startdate" class="dateico"
+                               onclick="WdatePicker({readOnly:true,onpicked:function(){set_enddate('startdate','enddate');},minDate:'%y-%M-%d',maxDate:'%y-%M-{%d+90}'})">
+                    </li>
+                    <li class="date">
+                        <span>离店日期</span>
+                        <input type="text" name="enddate" value="2018-05-16" id="enddate"
+                               onclick="WdatePicker({readOnly:true,minDate:'#F{ $dp.$D(\'startdate\',{d:1})}',maxDate:'%y-%M-{%d+91}'})"
+                               class="dateico">
+                    </li>
+                    <li>
+                        <span>酒店名</span>
+                        <input type="text" name="hotelname" value="" id="hotelname">
+                    </li>
+                    <li class="search-button">
+                        <button type="submit" class="redBtn w_60">搜 索</button>
+                    <li>
+                </ul>
+            </div>
+
+                            <div class="hotellist" id="hotellist">
+                    <ul class="hotel-div">
+                            <li class="hotel-content">
+                                <div class="hotel-head">
+                                    <div class="hotel-name"><a href="javascript:;"
+                                                               onclick="goto_page('','GB','hotel')">古北之光温泉度假酒店</a>
+                                    </div>
+                                    <div class="hotel-instruction">
+                                            <span class="hotel-feature">酒店配套：温泉/SPA/健身房/瑜伽室/棋牌中心/桌球/乒乓球/儿童欢乐中心/游泳池/花园酒吧/御泉西餐厅/中餐厅/美溪茶座餐厅</span>
+                                            <a href="javascript:;"
+                                               onclick="goto_page('','GB','hotel')"><span
+                                                    class="hotel-knowmore">了解详情</span></a>
+                                        </div>
+                                                                        </div>
+                                <div class="hotel-img">
+                                    <a href="javascript:;" onclick="goto_page('','GB','hotel')"><img
+                                            src="/Upload/Reservation/0584903ecd0266.jpg" class="yasuoimg"></a>
+                                </div>
+                            </li>
+                            <li class="roomtype-div">
+                                <ul class="roomtype-head">
+                                    <li class="rt-name">房型</li>
+                                    <li class="rt-breakfast">早餐</li>
+                                    <li class="rt-wifi">宽带</li>
+                                    <li class="rt-price">均价</li>
+                                    <li class="rt-operate">操作</li>
+                                </ul>
+                                <ul class="roomtype-list GB">
+                                    <div class="roomtype-detail">
+                                            <li class="rt-name">
+                                                <a href="javascript:;"
+                                                   onclick="goto_page('GB14','','roomtype')">古北之光豪华大床房A</a>
+                                            </li>
+                                            <li class="rt-breakfast">
+                                                双早                                            </li>
+                                            <li class="rt-wifi">
+                                                免费
+                                            </li>
+                                            <li class="rt-price">
+                                                <span>￥<span class="price">1440</span></span>
+                                            </li>
+                                            <li class="rt-operate">
+                                           <button class="redBtn w_60" type="button"
+                                                            onclick="goto_page('GB14','','roomtype')">
+                                                        立 即 预 订
+                                                    </button>                                            </li>
+                                        </div>
+
+
+
+
+
+                                                        </li>
+                        </ul>
+                                                          </li>
+                        </ul>
+                                                            </li>
+                        </ul>
+                         </div>        <input type="hidden" name="random" value="405e2abb2a0437f65bcdda698ee49090_35225580d0fd9bf4ccc98b663e57f9ea" /></form>
+    </div>
+
+<div class="bottom-footer" id="bottom_footer">
+    <div class="footer">
+           <!--底部-->
+     {include file="common/top"}
+     <!--  <底部>-->
+       </div>
+
+
+
+<!--右侧广告图片-->
+<div class="adBox">
+        <a href="http://www.wtown.com.cn/index.php/Reservation/Package/index.html?combo_type=8" target="_blank" title="长城踏青季"><img src="/Upload/Reservation/05acea6f32a649.jpg" alt="" class="adimg"></a>
+    </div><div class="online-div">
+    <!--客服-->
+    <div class="service">
+        <a href="https://chat32.live800.com/live800/chatClient/chatbox.jsp?companyID=747330&configID=104795&jid=8140345408&s=1"
+           target="_blank">
+            <img src="/Public/Reservation/images/在线客服.png">
+        </a>
+    </div>
+    <div class="qrcode">
+        <img src="/Public/Reservation/images/qrcode.png">
+    </div>
+    <div style="display: none" id="weixin">
+        <img src="/Public/Reservation/images/weixinqrcode.png">
+    </div>
+    <div class="myorder">
+        <a href="/index.php/Reservation/Order/orderManage.html?ostatus=0" title="购物车">
+            <img src="/Public/Reservation/images/cart.png">
+        </a>
+    </div>
+</div>
+
+<script src="__JS__/jquery-1.8.0.js"></script>
+
+<!-- Live800默认功能代码: 开始-->
+<script language="javascript"
+        src="https://chat32.live800.com/live800/chatClient/monitor.js?jid=8140345408&companyID=747330&configID=104794&codeType=custom&ss=1"></script>
+<!-- Live800默认功能代码: 结束-->
+
+<!-- Live800默认数据分析代码: 开始-->
+<div style='display:none;'><a href='http://www.live800.com'>客服软件</a></div>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-86803662-8']);
+    _gaq.push(['_trackPageview']);
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<div style='display:none;'><a href='http://en.live800.com'>live chat</a></div>
+<!-- Live800默认数据分析代码: 结束-->
+
+<script src="__JS__/common.js"></script>
+<script src="__JS__/jquery.scrollUp.min.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?2308ee10dc67607f33445c1c0a899681";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<!--轮播js-->
+<!--<script type="text/javascript">-->
+<!--jQuery(".slideBox").slide({mainCell: ".bd ul", effect: "leftLoop", autoPlay: true});//左循环-->
+<!--</script>-->
+<script>
+    //  回顶部
+    jQuery.scrollUp({animation: 'fade', scrollDistance: 50, scrollText: '<span></span>', scrollTitle: '回顶部'});
+    $(".footer-text li:first-child").css({"font-size": "16px", "margin-bottom": "6px"});
+    //将页面内所有指定id的图片按比例缩放
+    function RsizeAllImageByClass(id, W, H) {
+        var imgs = document.getElementsByTagName("img");
+        for (var i = 0; i < imgs.length; i++) {
+            if ($(imgs[i]).attr('class') == id) {
+                ResizeImage(imgs[i], W, H);
+            }
+        }
+    }
+    //将图片的大小按比例缩放,适合显示在宽W和高H的区域内
+    function ResizeImage(imageDest, W, H) {
+        var image = new Image();
+        image.src = imageDest.src;
+        if (image.width > 0 && image.height > 0) {
+            if (image.width / image.height >= W / H) {
+                if (image.width > W) {
+                    imageDest.width = W;
+                    imageDest.height = (image.height * W) / image.width;
+                }
+                else {
+                    imageDest.width = image.width;
+                    imageDest.height = image.height;
+                }
+            }
+            else {
+                if (image.height > H) {
+                    imageDest.height = H;
+                    imageDest.width = (image.width * H) / image.height;
+                }
+                else {
+                    imageDest.width = image.width;
+                    imageDest.height = image.height;
+                }
+            }
+        }
+    }
+    $(document).ready(function () {
+        // 显示微信二维码
+        $(".qrcode").hover(function () {
+            $("#weixin").css("display", "block");
+        }, function () {
+            $("#weixin").css("display", "none");
+        });
+
+//        $("#nav ul li").click(function () {
+//            $(this).addClass('current').siblings().removeClass('current');
+//        });
+        // 浏览器可视高度
+        var screenHeight = document.documentElement.clientHeight;
+        //底部高度
+        var foot_height = document.getElementById("bottom_footer").offsetHeight;
+        var height = screenHeight - foot_height;
+        $(".wrap").css("min-height", height - 120);
+
+    });
+</script>
+
+    <script src="__JS__/jquery-1.7.2.min.js"></script>
+    <script src="__JS__/jquery.SuperSlide.2.1.1.js"></script>
+    <script src="__JS__/WdatePicker.js"></script>
+    <script>
+        $(document).ready(function () {
+            var navH = $(".search-div").offset().top;
+            var navL = $(".search-div").offset().left;
+
+            $(window).scroll(function () {
+                //获取滚动条的滑动距离
+                var scroH = $(this).scrollTop();
+                //滚动条的滑动距离大于等于定位元素距离浏览器顶部的距离，就固定，反之就不固定
+                if (scroH >= navH) {
+                    $(".search-div").css({"position": "fixed", "top": 0, "left": navL});
+                } else if (scroH < navH) {
+                    $(".search-div").css({"position": "static"});
+                }
+            });
+
+            var anchor = '';
+            if (anchor == "head-nav") {
+                location.href = "#head-nav";
+            }
+            RsizeAllImageByClass("yasuoimg", 1192, 500);
+            var place = '';
+            var type = '';
+            var envir = '';
+            var price = '';
+            var room_type = '';
+            if (type !== '') {
+                $("input[name='hoteltype'][value='" + type + "']").attr('checked', true);
+            } else {
+                $("input[name='hoteltype'][value='any']").attr('checked', true);
+            }
+
+            select("place_" + place);
+            select("envir_" + envir);
+            select("room_type_" + room_type);
+            select("price-" + price);
+        });
+
+        function select(index) {
+            $("#" + index).addClass("selected").siblings().removeClass("selected");
+        }
+        function changeSelect(key, value) {
+            $('#' + key).val(value);
+            $("#roomform").submit();
+        }
+    </script>
+    <script>
+        function order_function(sort_type) {
+            if (sort_type == "min_price") {
+                var order = $("#priceorder").val();
+//                alert(order);
+                if (order == "desc" || order == "") {
+                    var order_next = "asc";
+                    $("#pricedesc").hide();
+                    $("#priceasc").show();
+                    $("#pricenone").hide();
+                    $("#sortdesc").hide();
+                    $("#sortasc").hide();
+                    $("#sortnone").show();
+                } else if (order == "asc") {
+                    var order_next = "desc";
+                    $("#pricedesc").show();
+                    $("#priceasc").hide();
+                    $("#pricenone").hide();
+                    $("#sortdesc").hide();
+                    $("#sortasc").hide();
+                    $("#sortnone").show();
+                }
+                $("#priceorder").val(order_next);
+            }
+            if (sort_type == "sort") {
+                var order = $("#sortorder").val();
+//                alert(order);
+                if (order == "desc") {
+                    var order_next = "asc";
+                    $("#sortdesc").hide();
+                    $("#sortasc").show();
+                    $("#sortnone").hide();
+                    $("#pricedesc").hide();
+                    $("#priceasc").hide();
+                    $("#pricenone").show();
+                } else if (order == "asc") {
+                    var order_next = "desc";
+                    $("#sortdesc").show();
+                    $("#sortasc").hide();
+                    $("#sortnone").hide();
+                    $("#pricedesc").hide();
+                    $("#priceasc").hide();
+                    $("#pricenone").show();
+                }
+                $("#sortorder").val(order_next);
+
+            }
+//            alert(sort_type);
+            $.post("/index.php/Reservation/Room/getSortedData.html",
+                    {
+                        type: '',
+                        envir: '',
+                        place: '',
+                        enddate: '2018-05-16',
+                        min_price: '0',
+                        max_price: '9999999',
+                        startdate: '2018-05-15',
+                        hotelname: '',
+                        room_type: '',
+                        scenic_code: 'GBHOTEL',
+                        order: order_next,
+                        sort: sort_type
+                    },
+                    function (k) {
+//                        console.log(k);
+                        $("#hotellist").html(k);
+                    });
+        }
+
+        function show_more(hotel_code) {
+            var method = "showrt";
+            var enddate = $("#enddate").val();
+            var startdate = $("#startdate").val();
+            $.post("/index.php/Reservation/Room/showMoreRoomtype.html",
+                    {
+                        method: method,
+                        enddate: enddate,
+                        startdate: startdate,
+                        hotel_code: hotel_code,
+                        envir: '',
+                        min_price: '0',
+                        max_price: '9999999',
+                        room_type: '',
+                        scenic_code: 'GBHOTEL'
+                    },
+                    function (k) {
+//                        console.log(k);
+                        $("." + hotel_code).html(k);
+                        $("#" + hotel_code + "hide").show();
+                        $("#" + hotel_code + "show").hide();
+                    });
+        }
+        function hide_more(hotel_code) {
+            var method = "hidert";
+            var enddate = $("#enddate").val();
+            var startdate = $("#startdate").val();
+            $.post("/index.php/Reservation/Room/showMoreRoomtype.html",
+                    {
+                        method: method,
+                        enddate: enddate,
+                        startdate: startdate,
+                        hotel_code: hotel_code,
+                        envir: '',
+                        min_price: '0',
+                        max_price: '9999999',
+                        room_type: '',
+                        scenic_code: 'GBHOTEL'
+                    },
+                    function (k) {
+//                        console.log(k);
+                        $("." + hotel_code).html(k);
+                        $("#" + hotel_code + "hide").hide();
+                        $("#" + hotel_code + "show").show();
+                    });
+        }
+
+
+        function goto_page(rt_code, hotel_code, type) {
+            var enddate = $("#enddate").val();
+            var startdate = $("#startdate").val();
+            if (type == "roomtype") {
+                window.location.href = "{:url('ticket/jiudian')}?rt_code=" + rt_code + "&startdate=" + startdate +
+                        "&enddate=" + enddate + "&scenic_code=GBHOTEL";
+            }
+            if (type == "hotel") {
+                window.location.href = "{:url('ticket/jiudian')}?hotel_code=" + hotel_code + "&startdate=" + startdate +
+                        "&enddate=" + enddate + "&scenic_code=GBHOTEL";
+            }
+        }
+
+
+    </script>
+
+</body>
+</html>

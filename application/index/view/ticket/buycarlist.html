@@ -1,0 +1,249 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?0791a2f9676aee83f8e9a84788e1bb74";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+               <!--tou部-->
+     {include file="common/tou"}
+     <!--  <tou部>-->
+
+    <div class="wrap body">
+        <div class="box-title">
+            <h3>购物车信息</h3>
+        </div>
+        <div class="box-content">
+        <?php foreach($arr as $key => $val) { ?>
+            <ul class="box-item">
+        <input type="checkbox" name="">
+                    <li><span>订单号</span></li>
+                    <li><span>联系人</span></li>
+                    <li><span>订单信息</span></li>
+                    <li><span>金额</span>¥ </li>
+                </ul>
+
+        <?php } ?>
+                </div>
+        <p class="text-right">本单需支付<span class="red">￥ < 元</span></p>
+
+        <div class="box-title">
+            <h3>说明：</h3>
+        </div>
+
+        <div class="box-content">
+            <p>订单提交成功请在30分钟内完成网上支付，超时订单将做无效处理。</p>
+        </div>
+
+        <form action="{:url('ticket/zhifu')}" method="post" target="_blank">
+            <input type="hidden" name="orderid" value="201805152032532404000206">                        <div class="text-center">
+                <input type="submit" value="立即支付" id="sub" class="redBtn">
+            </div>
+        <input type="hidden" name="random" value="03159c19cd020f59e317d7fe222641e6_bd8cd5e3d032b2f0b2dfb0a123f2c8bd" /></form>
+
+
+        <div class="createMask" style="display: none;"></div>
+        <div class="alertBox" style="display: none;">
+            <div class="box-title">
+                <h3>支付提示</h3>
+            </div>
+
+            <div class="box-content text-center">
+                <!--ajax查询实际支付情况-->
+            </div>
+        </div>
+    </div>
+
+<div class="bottom-footer" id="bottom_footer">
+    <div class="footer">
+                      <!--底部-->
+     {include file="common/top"}
+     <!--  <底部>-->
+</div>
+
+
+
+<!--右侧广告图片-->
+<div class="online-div">
+    <!--客服-->
+    <div class="service">
+        <a href="https://chat32.live800.com/live800/chatClient/chatbox.jsp?companyID=747330&configID=104795&jid=8140345408&s=1"
+           target="_blank">
+            <img src="/Public/Reservation/images/在线客服.png">
+        </a>
+    </div>
+    <div class="qrcode">
+        <img src="/Public/Reservation/images/qrcode.png">
+    </div>
+    <div style="display: none" id="weixin">
+        <img src="/Public/Reservation/images/weixinqrcode.png">
+    </div>
+    <div class="myorder">
+        <a href="/index.php/Reservation/Order/orderManage.html?ostatus=0" title="购物车">
+            <img src="/Public/Reservation/images/cart.png">
+        </a>
+    </div>
+</div>
+
+<script src="__JS__/jquery-1.8.0.js"></script>
+
+<!-- Live800默认功能代码: 开始-->
+<script language="javascript"
+        src="https://chat32.live800.com/live800/chatClient/monitor.js?jid=8140345408&companyID=747330&configID=104794&codeType=custom&ss=1"></script>
+<!-- Live800默认功能代码: 结束-->
+
+<!-- Live800默认数据分析代码: 开始-->
+<div style='display:none;'><a href='http://www.live800.com'>客服软件</a></div>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-86803662-8']);
+    _gaq.push(['_trackPageview']);
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<div style='display:none;'><a href='http://en.live800.com'>live chat</a></div>
+<!-- Live800默认数据分析代码: 结束-->
+
+<script src="__JS__/common.js"></script>
+<script src="__JS__/jquery.scrollUp.min.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?2308ee10dc67607f33445c1c0a899681";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<!--轮播js-->
+<!--<script type="text/javascript">-->
+<!--jQuery(".slideBox").slide({mainCell: ".bd ul", effect: "leftLoop", autoPlay: true});//左循环-->
+<!--</script>-->
+<script>
+    //  回顶部
+    jQuery.scrollUp({animation: 'fade', scrollDistance: 50, scrollText: '<span></span>', scrollTitle: '回顶部'});
+    $(".footer-text li:first-child").css({"font-size": "16px", "margin-bottom": "6px"});
+    //将页面内所有指定id的图片按比例缩放
+    function RsizeAllImageByClass(id, W, H) {
+        var imgs = document.getElementsByTagName("img");
+        for (var i = 0; i < imgs.length; i++) {
+            if ($(imgs[i]).attr('class') == id) {
+                ResizeImage(imgs[i], W, H);
+            }
+        }
+    }
+    //将图片的大小按比例缩放,适合显示在宽W和高H的区域内
+    function ResizeImage(imageDest, W, H) {
+        var image = new Image();
+        image.src = imageDest.src;
+        if (image.width > 0 && image.height > 0) {
+            if (image.width / image.height >= W / H) {
+                if (image.width > W) {
+                    imageDest.width = W;
+                    imageDest.height = (image.height * W) / image.width;
+                }
+                else {
+                    imageDest.width = image.width;
+                    imageDest.height = image.height;
+                }
+            }
+            else {
+                if (image.height > H) {
+                    imageDest.height = H;
+                    imageDest.width = (image.width * H) / image.height;
+                }
+                else {
+                    imageDest.width = image.width;
+                    imageDest.height = image.height;
+                }
+            }
+        }
+    }
+    $(document).ready(function () {
+        // 显示微信二维码
+        $(".qrcode").hover(function () {
+            $("#weixin").css("display", "block");
+        }, function () {
+            $("#weixin").css("display", "none");
+        });
+
+//        $("#nav ul li").click(function () {
+//            $(this).addClass('current').siblings().removeClass('current');
+//        });
+        // 浏览器可视高度
+        var screenHeight = document.documentElement.clientHeight;
+        //底部高度
+        var foot_height = document.getElementById("bottom_footer").offsetHeight;
+        var height = screenHeight - foot_height;
+        $(".wrap").css("min-height", height - 120);
+
+    });
+</script>
+
+    <script>
+        function get_order_status(type) {
+            if (type == 1) {
+                $("#success").attr('disabled', true).text("查询中...");
+            }else {
+                $("#fail").attr('disabled', true).text("查询中...");
+            }
+            setTimeout(function () {
+                $.post("/index.php/Reservation/Order/getOrderStatus.html", {
+                    orderid: '201805152032532404000206',
+                    orderNos: ''
+                }, function (data) {
+                    if (data == 1) {
+                        //支付成功
+                        alert("支付成功！");
+                        location.href = "/index.php/Reservation/Order/orderManage.html";
+                    } else {
+                        $(".alertBox .box-content").html("");
+                        var content = "<h4>支付失败</h4>";
+                        content += "<button type='button' class='redBtn box-footer' onclick='closebox()'>确认</button>"
+                        $(".alertBox .box-content").html(content);
+                    }
+                });
+            }, 3000);
+        }
+
+        $("#sub").click(function () {
+            $(".alertBox .box-content").html("");
+            var content = '<p>请您在新打开的页面上完成支付</p>';
+            content += '<p>支付完成前，请不要关闭此支付验证窗口。</p>';
+            content += '<p>支付完成后，请根据您支付的情况点击下面按钮</p>';
+            content += '<div class="box-footer">';
+            content += '<label class="text-left">';
+            content += '<button type="button" class="redBtn" id="success" onclick="get_order_status(1)">支付完成</button>';
+            content += '</label>';
+            content += '<label class="text-right">';
+            content += '<button type="button" class="grayBtn" id="fail" onclick="get_order_status(2)">支付遇到问题</button>';
+            content += '</label>';
+            content += '</div>';
+            $(".alertBox .box-content").html(content);
+            $(".createMask").fadeIn(100);
+            $(".alertBox").slideDown(200);
+        });
+
+        $(".createMask").click(function () {
+            closebox();
+        });
+
+        function closebox() {
+            $(".createMask").fadeOut(100);
+            $(".alertBox").slideUp(200)
+        }
+    </script>
+
+</body>
+</html>

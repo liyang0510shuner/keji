@@ -1,0 +1,206 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+
+    <body>
+
+     <!--   头部-->
+       {include file="common/header"}
+     <!--  头部-->
+        <div class="met-banner" data-height='' style=''>
+        	     	<?php foreach($img as $k=>$value){?>
+            <div class="slick-slide">
+                <img class="cover-image" src="__IMGS__/1.jpg" sizes="(max-width: 767px) 767px"
+                alt="">
+            </div>
+          <?php } ?>
+        </div>
+        <div class="met-index-about met-index-body" style="background-image:url();">
+            <div class="container">
+                <h2 class="invisible" data-plugin="appear" data-animate="slide-top" data-repeat="false">
+                    古北水镇
+                </h2>
+                <p class="desc invisible" data-plugin="appear" data-animate="fade" data-repeat="false">
+                    ——假期放松好场所——
+                </p>
+                <ul class="blocks-100 blocks-sm-2 blocks-md-3 blocks-xlg-3 " data-plugin="matchHeight">
+                	<?php foreach($arr as $k=>$v){?>
+                    <li class="invisible" data-plugin="appear" data-animate="slide-bottom50"
+                    data-repeat="false">
+                        <div class="about-shadow">
+                            <a href="#"​ title="休闲项目">
+                                <img src="/tp5/public/uploads/<?=($v['p_path'])?>" alt="休闲项目">
+                            </a>
+                            <a href="#"​ title="冬季水镇" class="about-info">
+                                <h3>
+                                   {$v['p_title']}
+                                </h3>
+           
+                            </a>
+                        </div>
+                    </li>
+                 
+               <?php } ?>
+                </ul>
+                <a href="{:url('index/poto')}"​ title="查看更多" class="more">
+                    查看更多
+                </a>
+            </div>
+        </div>
+        <div class="met-index-product met-index-body" style="background-image:url();">
+            <div class="container">
+                <h2 class="invisible" data-plugin="appear" data-animate="slide-top" data-repeat="false">
+                    古镇美食
+                </h2>
+                <p class="desc invisible" data-plugin="appear" data-animate="fade" data-repeat="false">
+                    ——The happiest thing in life is to eat delicious food——
+                </p>
+
+                <ul class="blocks-2 blocks-sm-2 blocks-md-4 blocks-xlg-4 no-space" id='indexprolist'
+                data-scale='0.65625'>
+                	<?php foreach($arrto as $k=>$vul){?>
+                    <li>
+                        <div class="widget widget-shadow invisible" data-plugin="appear" data-animate="slide-bottom50"
+                        data-repeat="false">
+                            <figure class="widget-header cover">
+                                <a href="#"​ title="   美食名称" target='_self'>
+                                    <img class="cover-image" src="/tp5/public/uploads/<?=($vul['p_path'])?>" style='height:300px;'
+                                    alt="   美食名称">
+                                </a>
+                            </figure>
+                            <h4 class="widget-title">
+                                <a href="#"​ title="   美食名称" target='_self'>
+                                  {$vul['p_title']}
+                                </a>
+                            </h4>
+                        </div>
+                    </li>
+                    	<?php } ?>
+              
+               
+                
+                </ul>
+                <a href="{:url('index/potot')}"​ title="活动套餐" class="more">
+                    查看更多
+                </a>
+            </div>
+        </div>
+        <div class="met-index-jion met-index-body" style="background-image:url(images/1510133967.jpg);">
+          <?php foreach($re as $k=>$v){?>
+            <video width="70%" height="50%" controls="controls" src="__ROOT__/{$v['vio']}">
+                   <ideo>
+         <?php } ?>
+
+        </div>
+        <div class="met-index-news met-index-body" style="background-image:url();">
+            <div class="container">
+                <h2 class="invisible" data-plugin="appear" data-animate="slide-top" data-repeat="false">
+                    游玩攻略
+                </h2>
+                <p class="desc invisible" data-plugin="appear" data-animate="fade" data-repeat="false">
+                    ——strategy——
+                </p>
+                <ul class="blocks-2" data-scale='0.71428571428571'>
+                	<?php foreach($res as $k=>$ve){?>
+                    <li class="invisible" data-plugin="appear" data-animate="slide-bottom"
+                    data-repeat="false">
+                        <div class="media media-lg">
+                         
+                            <div class="media-body">
+                                <h4 class="media-heading">
+                                    <a href="#"​ title="欢乐农庄是休闲旅游、养生度假、娱乐放松的最"
+                                    target='_self'>
+                                    {$ve['g_title']}
+                                    </a>
+                                </h4>
+                                <p class="des">
+                                	 {$ve['g_content']}
+                                             </p>
+                                <p class="info">
+                                    <span>
+                                     {$ve['g_time']}
+                                    </span>
+                                    <span class="margin-left-10">
+                                        admin
+                                    </span>
+                                    <span class="margin-left-10">
+                                        <i class="icon wb-eye margin-right-5" aria-hidden="true">
+                                        </i>
+                                        174
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    	<?php } ?>
+              
+                
+                 
+                </ul>
+                <a href="{:url('index/about3')}"​ title="游玩攻略" class="more">
+                    查看更多
+                </a>
+            </div>
+        </div>
+        <div class="met-index-contact met-index-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5">
+                        <p style="margin-top: 10px; padding: 0px; font-family: 微软雅黑; line-height: 20px; color: rgb(0, 0, 0); white-space: normal; text-indent: 0em;">
+                            <span style="font-size: 20px;">
+                                <strong>
+                                    <span style="color: rgb(255, 255, 255);">
+                                       最牛工作室
+                                    </span>
+                                </strong>
+                            </span>
+                        </p>
+                        <p style="margin-top: 10px; padding: 0px; font-family: 微软雅黑; line-height: 20px; color: rgb(0, 0, 0); white-space: normal; text-indent: 0em;">
+                            <span style="color: rgb(255, 255, 255); font-family: 微软雅黑, " microsoft=""
+                            font-size:="">
+                                联系方式：521-520-1314
+                            </span>
+                        </p>
+                        <p style="margin-top: 10px; padding: 0px; font-family: 微软雅黑; line-height: 20px; color: rgb(0, 0, 0); white-space: normal; text-indent: 0em;">
+                            <span style="color: rgb(255, 255, 255); font-family: 微软雅黑, " microsoft=""
+                            font-size:="">
+                                地址：北京市顺义区
+                            </span>
+                        </p>
+                        <p style="margin-top: 10px; padding: 0px; font-family: 微软雅黑; line-height: 20px; color: rgb(0, 0, 0); white-space: normal; text-indent: 0em;">
+                            <span style="color: rgb(255, 255, 255); font-family: 微软雅黑, " microsoft=""
+                            font-size:="">
+                                公交线路：205路、509、365路到软件园南站下对面即是。
+                            </span>
+                        </p>
+                        <p style="margin-top: 10px; padding: 0px; font-family: 微软雅黑; line-height: 20px; color: rgb(0, 0, 0); white-space: normal; text-indent: 0em;">
+                            <span style="color: rgb(255, 255, 255); font-family: 微软雅黑, " microsoft=""
+                            font-size:="">
+                                <img src="__IMGS__/3e7cd5389cc442aeace60d2f1a9f0a9c.png" style=" width:100%;"
+                                border="0" vspace="0" title="" alt="" />
+                            </span>
+                        </p>
+                        <p style="margin-top: 10px; padding: 0px; font-family: 微软雅黑; line-height: 20px; color: rgb(0, 0, 0); white-space: normal; text-indent: 0em;">
+                            <span style="color: rgb(255, 255, 255); font-family: 微软雅黑, " microsoft=""
+                            font-size:="">
+                                <br/>
+                            </span>
+                        </p>
+                        <p class="font-size-20">
+                        </p>
+                    </div>
+                    <div class="col-md-7">
+                    	天气接口
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       <!--底部-->
+     {include file="common/top"}
+     <!--  <底部>-->
+
+    </body>
+
+</html>

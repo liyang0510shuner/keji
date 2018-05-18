@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?0791a2f9676aee83f8e9a84788e1bb74";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<head>
+    <!--<meta http-equiv=”X-UA-Compatible” content=”IE=edge,chrome=1″ />-->
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"/>-->
+    <meta charset="UTF-8">
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache,must-revalidate">
+    <META HTTP-EQUIV="expires" CONTENT="0">
+    <meta name="Description" content="古北水镇预订网是古北水镇景区旗下官方预订网站，提供景区内各类套餐、自由行产品等预订服务，让您省钱更省心。">
+    <title>
+        支付 - 古北水镇官方预订网站
+    </title>
+    <link href="/Public/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="__CSS__/base.css" rel="stylesheet">
+
+    <link href="__CSS__/showOrder.css" rel="stylesheet">
+    <style>
+        .popover {
+            display: none;
+            width: 600px;
+            height: 400px;
+            margin: 0 auto;
+        }
+
+        .savebtn {
+            background: #e4393c;
+            border-radius: 3px;
+            border: none;
+            width: 180px;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .cancelbtn {
+            background: #d3d1d1;
+            border-radius: 3px;
+            border: none;
+            width: 180px;
+            padding: 10px;
+        }
+    </style>
+
+<meta name="random" content="cfec0a45aa550c5f32496810793d756e_88900c5d14d3ce0c48077b757d2cceae" />           <!--tou部-->
+     {include file="common/tou"}
+     <!--  <tou部>-->
+
+
+    <div class="wrap body">
+        <div class="box-title">
+            <h3>支付信息</h3>
+        </div>
+        <div class="box-content">
+        <?php foreach($arr as $key => $val) { ?>
+            <ul class="box-item">
+                    <li><span>下单时间</span><?=date("Y-m-d H:i",$val['buy_time'])?></li>
+                    <li><span>订单号</span><?=$val['order']?></li>
+                    <li><span>订单名称</span><?=date("Y-m-d H:i",$val['reserve_time'])?> <?=$val['t_name']?></li>
+                    <li><span>订单金额</span><?=$val['o_price']?></li>
+                </ul>
+        <?php }?>
+                </div>
+        <p class="text-right">合计<span class="red">￥ <?=$price?> 元</span></p>
+
+        <div class="box-title">
+            <h3>第三方支付</h3>
+        </div>
+
+        <form action="{:url('ticket/alipay')}" method="post">
+            <input type="hidden" name="orderid" value="201805152032532404000206">
+            <div class="box-content text-center">
+                <label>
+                    <input type="radio" name="paytype" value="alipay">
+                    <img src="__IMG__/alipay.jpg" height="60px">
+                </label>
+                <label style="margin-left: 60px;">
+                    <input type="radio" name="paytype" value="weixin">
+                    <img src="__IMG__/wxpay.jpg" height="60px">
+                </label>
+                <label style="margin-left: 60px;">
+                    <input type="radio" name="paytype" value="union">
+                    <img src="__IMG__/unionpay.jpg" height="60px">
+                </label>
+            </div>
+            <div class="text-center" style="margin-top: 30px;">
+                <input type="submit" value="下一步" id="sub" class="redBtn">
+            </div>
+        <input type="hidden" name="random" value="cfec0a45aa550c5f32496810793d756e_88900c5d14d3ce0c48077b757d2cceae" /></form>
+
+        <div class="createMask" style="display: none;"></div>
+        <div class="alertBox" style="display: none;">
+            <div class="box-content text-center">
+                <ul>
+                    <li>
+                        <div id="qrcode"></div>
+                    </li>
+                    <li class="text-left">
+                        <p>第一步:打开微信点击右上角加号打开扫一扫，对准上方二维码扫描</p>
+
+                        <p>第二步:在微信支付界面，进行支付！支付成功后可以关注古北水镇的官方微信，更多惊喜等着您。</p>
+
+                        <p>第三步:支付成功后，请点击支付成功，返回商城继续选购，也可以点击取消支付，选择其他方式进行支付!</p>
+
+                        <p id="tips" style="color:#e76451"></p>
+                    </li>
+                </ul>
+                <div class="box-footer">
+                    <!--ajax查询实际支付情况-->
+                    <label class="text-left">
+                        <input type="button" value="支付成功" class="redBtn" id="savebtn">
+                    </label>
+                    <label class="text-right">
+                        <input type="button" value="取消支付" class="grayBtn" id="cancelbtn">
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="bottom-footer" id="bottom_footer">
+    <div class="footer">
+                    <!--底部-->
+     {include file="common/top"}
+     <!--  <底部>-->
+</div>
+
+
+
+<!--右侧广告图片-->
+<div class="online-div">
+    <!--客服-->
+    <div class="service">
+        <a href="https://chat32.live800.com/live800/chatClient/chatbox.jsp?companyID=747330&configID=104795&jid=8140345408&s=1"
+           target="_blank">
+            <img src="/Public/Reservation/images/在线客服.png">
+        </a>
+    </div>
+    <div class="qrcode">
+        <img src="/Public/Reservation/images/qrcode.png">
+    </div>
+    <div style="display: none" id="weixin">
+        <img src="/Public/Reservation/images/weixinqrcode.png">
+    </div>
+    <div class="myorder">
+        <a href="/index.php/Reservation/Order/orderManage.html?ostatus=0" title="购物车">
+            <img src="/Public/Reservation/images/cart.png">
+        </a>
+    </div>
+</div>
+
+<script src="__JS__/jquery-1.8.0.js"></script>
+
+<!-- Live800默认功能代码: 开始-->
+<script language="javascript"
+        src="https://chat32.live800.com/live800/chatClient/monitor.js?jid=8140345408&companyID=747330&configID=104794&codeType=custom&ss=1"></script>
+<!-- Live800默认功能代码: 结束-->
+
+<!-- Live800默认数据分析代码: 开始-->
+<div style='display:none;'><a href='http://www.live800.com'>客服软件</a></div>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-86803662-8']);
+    _gaq.push(['_trackPageview']);
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<div style='display:none;'><a href='http://en.live800.com'>live chat</a></div>
+<!-- Live800默认数据分析代码: 结束-->
+
+<script src="__JS__/common.js"></script>
+<script src="__JS__/jquery.scrollUp.min.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?2308ee10dc67607f33445c1c0a899681";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<!--轮播js-->
+<!--<script type="text/javascript">-->
+<!--jQuery(".slideBox").slide({mainCell: ".bd ul", effect: "leftLoop", autoPlay: true});//左循环-->
+<!--</script>-->
+<script>
+    //  回顶部
+    jQuery.scrollUp({animation: 'fade', scrollDistance: 50, scrollText: '<span></span>', scrollTitle: '回顶部'});
+    $(".footer-text li:first-child").css({"font-size": "16px", "margin-bottom": "6px"});
+    //将页面内所有指定id的图片按比例缩放
+    function RsizeAllImageByClass(id, W, H) {
+        var imgs = document.getElementsByTagName("img");
+        for (var i = 0; i < imgs.length; i++) {
+            if ($(imgs[i]).attr('class') == id) {
+                ResizeImage(imgs[i], W, H);
+            }
+        }
+    }
+    //将图片的大小按比例缩放,适合显示在宽W和高H的区域内
+    function ResizeImage(imageDest, W, H) {
+        var image = new Image();
+        image.src = imageDest.src;
+        if (image.width > 0 && image.height > 0) {
+            if (image.width / image.height >= W / H) {
+                if (image.width > W) {
+                    imageDest.width = W;
+                    imageDest.height = (image.height * W) / image.width;
+                }
+                else {
+                    imageDest.width = image.width;
+                    imageDest.height = image.height;
+                }
+            }
+            else {
+                if (image.height > H) {
+                    imageDest.height = H;
+                    imageDest.width = (image.width * H) / image.height;
+                }
+                else {
+                    imageDest.width = image.width;
+                    imageDest.height = image.height;
+                }
+            }
+        }
+    }
+    $(document).ready(function () {
+        // 显示微信二维码
+        $(".qrcode").hover(function () {
+            $("#weixin").css("display", "block");
+        }, function () {
+            $("#weixin").css("display", "none");
+        });
+
+//        $("#nav ul li").click(function () {
+//            $(this).addClass('current').siblings().removeClass('current');
+//        });
+        // 浏览器可视高度
+        var screenHeight = document.documentElement.clientHeight;
+        //底部高度
+        var foot_height = document.getElementById("bottom_footer").offsetHeight;
+        var height = screenHeight - foot_height;
+        $(".wrap").css("min-height", height - 120);
+
+    });
+</script>
+
+    <script src="__JS__/jquery.qrcode-0.12.0.js"></script>
+    <script src="__JS__/socket.io.js"></script>
+    <script src="/index.php/TimerTask/Script/socketserver.html?orderid=201805152032532404000206"></script>
+    <script>
+        //收到消息通知
+        socket.on('data', function (data) {
+            var dataObj = JSON.parse(data);
+            if (dataObj.message == 'ok') {
+                location.href = "/index.php/Reservation/Order/paysuccess.html";
+            }
+        });
+        $("#sub").click(function () {
+            $("#tips").text("");
+            if ($("input[name='paytype']:checked").val() == "weixin") {
+                $.post("/index.php/Reservation/Order/pay.html", {
+                    orderid: '201805152032532404000206',
+                    orderNos: '',
+                    paytype: 'weixin'
+                }, function (data) {
+                    if (data.code == 1) {
+                        $('#qrcode').html("");
+                        $('#qrcode').qrcode({
+                            "size": 130,
+                            "color": "#3a3",
+                            "text": data.qrcodeUrl
+                        });
+                        $(".createMask").fadeIn(100);
+                        $(".alertBox").slideDown(200);
+                    } else {
+                        alert(data);
+                    }
+                });
+                return false;
+            } else if (!$("input[name='paytype']:checked").val()) {
+                alert("请选择支付方式");
+                return false;
+            }
+        });
+
+        //3s后查询订单状态
+        $("#savebtn").click(function () {
+            $("#savebtn").val("查询中...").attr('disabled', true);
+            setTimeout(function () {
+                $.post("/index.php/Reservation/Order/getOrderStatus.html", {
+                    orderid: '201805152032532404000206',
+                    orderNos: ''
+                }, function (data) {
+                    if (data == 1) {
+                        location.href = "/index.php/Reservation/Order/paysuccess.html";
+                    } else {
+                        $("#savebtn").val("支付成功").attr('disabled', false);
+                        $("#tips").text("支付失败，请扫描二维码进行支付！");
+                    }
+                });
+            }, 3000);
+        });
+
+        $("#cancelbtn").click(function () {
+            closebox();
+        });
+
+        $(".createMask").click(function () {
+            closebox();
+        });
+
+        function closebox() {
+            $(".createMask").fadeOut(100);
+            $(".alertBox").slideUp(200)
+        }
+    </script>
+
+</body>
+</html>
